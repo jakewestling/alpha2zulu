@@ -1,0 +1,47 @@
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+#footer {  
+  padding: 0 0 4px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  color: #AAAFB4;
+}
+.footer-title {
+  font-size: 8px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #appContent {
+    max-width: 1140px;
+  }
+  #footer {
+    margin-left: auto;  
+    margin-right: auto;  
+    bottom: 0;
+    width: 1140px;
+  }
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}
