@@ -1,31 +1,82 @@
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
-#footer {  
-  padding: 0 0 4px 0;
+
+/* Button Ripple Effect
+https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
+https://material.io/components/buttons
+*/
+
+/* Reusable Variables */
+:root {
+  --grayed-out: #aaafb4;
+  --footer-height-xs: 36px;
+  --footer-height-md: 48px;
+}
+
+#footer {
+  padding-top: 0px;
   position: fixed;
   bottom: 0;
+  height: var(--footer-height-xs);
   width: 100%;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
 
-  color: #AAAFB4;
+  background-color: white;
+  /* background-color: red; */
+  color: var(--grayed-out);
 }
+#footer-spacer {
+  height: var(--footer-height-xs);
+}
+.nav-element {
+  font-size: 10px;
+  padding-top: 11px;
+  transition-property: padding-top, background-color;
+  transition-duration: 0.2s;
+}
+.nav-element-active {
+  padding-top: 4px;
+  color: rgb(224, 195, 31);
+  background: rgb(68, 95, 68);
+}
+
+.nav-element-active .footer-title {
+  visibility: visible;
+}
+
 .footer-title {
-  font-size: 8px;
+  visibility: hidden;
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
-}
+/* @media (min-width: 576px) {
+} */
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+  #footer {
+    height: var(--footer-height-md);
+    padding-top: 0px;
+  }
+  #footer-spacer {
+    height: var(--footer-height-md);
+  }
+  .nav-element {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+  .nav-element-active {
+    padding-top: 8px;
+  }
 }
+/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
+/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
+/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
+/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-}
+/* @media (min-width: 992px) {
+} */
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -33,15 +84,10 @@
     max-width: 1140px;
   }
   #footer {
-    margin-left: auto;  
-    margin-right: auto;  
-    bottom: 0;
     width: 1140px;
   }
-
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-
-}
+/* @media (min-width: 1400px) {
+} */
