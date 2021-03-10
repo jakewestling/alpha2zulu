@@ -6,9 +6,32 @@ https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
 https://material.io/components/buttons
 */
 
+.ripple {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 100%;
+  animation: rippleEffect 0.25s linear;
+}
+@keyframes rippleEffect {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.spacer-for-scroll {
+  height: 130vh;
+}
 /* Reusable Variables */
 :root {
   --grayed-out: #aaafb4;
+  --shadow: rgba(0, 0, 0, 0.1);
   --footer-height-xs: 36px;
   --footer-height-md: 48px;
 }
@@ -19,7 +42,7 @@ https://material.io/components/buttons
   bottom: 0;
   height: var(--footer-height-xs);
   width: 100%;
-  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -4px 8px var(--shadow);
 
   background-color: white;
   /* background-color: red; */
@@ -28,19 +51,21 @@ https://material.io/components/buttons
 #footer-spacer {
   height: var(--footer-height-xs);
 }
-.nav-element {
+.nav-button {
+  overflow: hidden;
+  position: relative;
   font-size: 10px;
   padding-top: 11px;
   transition-property: padding-top, background-color;
   transition-duration: 0.2s;
 }
-.nav-element-active {
+.nav-button-active {
   padding-top: 4px;
   color: rgb(224, 195, 31);
   background: rgb(68, 95, 68);
 }
 
-.nav-element-active .footer-title {
+.nav-button-active .footer-title {
   visibility: visible;
 }
 
@@ -61,11 +86,11 @@ https://material.io/components/buttons
   #footer-spacer {
     height: var(--footer-height-md);
   }
-  .nav-element {
+  .nav-button {
     font-size: 12px;
     padding-top: 15px;
   }
-  .nav-element-active {
+  .nav-button-active {
     padding-top: 8px;
   }
 }
