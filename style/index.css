@@ -116,3 +116,29 @@ https://material.io/components/buttons
 /* XX-Large devices (larger desktops, 1400px and up) */
 /* @media (min-width: 1400px) {
 } */
+
+/* ===== Splash Screen ===== */
+.splash {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.splash-gone {
+  opacity: 0;
+}
+
+.splash img {
+  display: block;
+  height: 50px;
+  width: 50px;
+}
