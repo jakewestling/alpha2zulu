@@ -6,6 +6,22 @@
 Saira Stencil One
 Ubuntu Mono
 New Rocker
+
+Colors:
+6583a8
+6b7b8e
+8fbbaf
+acdeaa
+d6f8b8
+
+Pictures
+https://www.pexels.com/photo/man-in-military-uniform-and-a-backpack-lying-on-ground-surrounded-by-trees-3706673/
+
+https://www.pexels.com/photo/flight-sky-sunset-men-54098/
+
+https://www.pexels.com/photo/landscape-photo-of-pathway-between-green-leaf-trees-615348/
+
+https://www.pexels.com/photo/green-grass-on-forest-418831/
 */
 body {
   font-family: "Play", sans-serif;
@@ -16,6 +32,8 @@ body {
 }
 /* Reusable Variables */
 :root {
+  --color-army-green: rgb(68, 95, 68);
+  --color-crate-yellow: rgb(224, 195, 31);
   --grayed-out: #aaafb4;
   --shadow: rgba(0, 0, 0, 0.1);
   --footer-height-xs: 36px;
@@ -47,8 +65,8 @@ body {
 }
 .nav-button-active {
   padding-top: 4px;
-  color: rgb(224, 195, 31);
-  background: rgb(68, 95, 68);
+  color: var(--color-crate-yellow);
+  background: var(--color-army-green);
 }
 
 .nav-button-active .footer-title {
@@ -168,4 +186,25 @@ https://material.io/components/buttons
     height: 180px;
     width: 180px;
   }
+}
+/* ===== Header ===== */
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 6px;
+  background: var(--color-army-green);
+  color: var(--color-crate-yellow);
+  display: flex;
+}
+
+.rank {
+  text-align: right;
+  flex-grow: 1;
+}
+
+select {
+  outline: 0;
+  padding: 3px 4px 3px 8px;
+  border-radius: 40px;
 }
