@@ -1,28 +1,14 @@
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
-/* Button Ripple Effect
-https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
-https://material.io/components/buttons
+/* Fonts possibilities
+1. Play by Jonas Hecksher
+Saira Stencil One
+Ubuntu Mono
+New Rocker
 */
-
-.ripple {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.3);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 100%;
-  animation: rippleEffect 0.25s linear;
-}
-@keyframes rippleEffect {
-  0% {
-    width: 0;
-    height: 0;
-  }
-  100% {
-    width: 250px;
-    height: 250px;
-  }
+body {
+  font-family: "Play", sans-serif;
 }
 
 .spacer-for-scroll {
@@ -71,6 +57,30 @@ https://material.io/components/buttons
 
 .footer-title {
   visibility: hidden;
+}
+
+/* Button Ripple Effect
+https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
+https://material.io/components/buttons
+*/
+
+.ripple {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 100%;
+  animation: rippleEffect 0.25s linear;
+}
+@keyframes rippleEffect {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -136,9 +146,26 @@ https://material.io/components/buttons
 .splash-gone {
   opacity: 0;
 }
+.splash__title {
+  text-transform: uppercase;
+  font-size: 40px;
+  white-space: nowrap;
+  margin-top: 10px;
+}
 
 .splash img {
   display: block;
-  height: 50px;
-  width: 50px;
+  height: 120px;
+  width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .splash__title {
+    font-size: 60px;
+  }
+
+  .splash img {
+    height: 180px;
+    width: 180px;
+  }
 }
