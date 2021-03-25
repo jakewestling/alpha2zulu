@@ -30,43 +30,46 @@ body {
 .spacer-for-scroll {
   height: 130vh;
 }
+
 /* Reusable Variables */
 :root {
   --color-army-green: rgb(68, 95, 68);
   --color-crate-yellow: rgb(224, 195, 31);
+  --header-height-xs: 41px;
+  --footer-height-md: 48px;
+  --footer-height-xs: 36px;
   --grayed-out: #aaafb4;
   --shadow: rgba(0, 0, 0, 0.1);
-  --footer-height-xs: 36px;
-  --footer-height-md: 48px;
 }
 
+/* Footer and Navigation Menu */
 #footer {
+  background-color: white;
+  bottom: 0;
+  box-shadow: 0px -4px 8px var(--shadow);
+  color: var(--grayed-out);
+  height: var(--footer-height-xs);
   padding-top: 0px;
   position: fixed;
-  bottom: 0;
-  height: var(--footer-height-xs);
   width: 100%;
-  box-shadow: 0px -4px 8px var(--shadow);
-
-  background-color: white;
-  /* background-color: red; */
-  color: var(--grayed-out);
 }
+
 #footer-spacer {
   height: var(--footer-height-xs);
 }
+
 .nav-button {
-  overflow: hidden;
-  position: relative;
   font-size: 10px;
+  overflow: hidden;
   padding-top: 11px;
-  transition-property: padding-top, background-color;
+  position: relative;
   transition-duration: 0.2s;
+  transition-property: padding-top, background-color;
 }
 .nav-button-active {
-  padding-top: 4px;
-  color: var(--color-crate-yellow);
   background: var(--color-army-green);
+  color: var(--color-crate-yellow);
+  padding-top: 4px;
 }
 
 .nav-button-active .footer-title {
@@ -75,6 +78,34 @@ body {
 
 .footer-title {
   visibility: hidden;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  #footer {
+    height: var(--footer-height-md);
+    padding-top: 0px;
+  }
+  #footer-spacer {
+    height: var(--footer-height-md);
+  }
+  .nav-button {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+  .nav-button-active {
+    padding-top: 8px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  #appContent {
+    max-width: 1140px;
+  }
+  #footer {
+    width: 1140px;
+  }
 }
 
 /* Button Ripple Effect
@@ -101,50 +132,6 @@ https://material.io/components/buttons
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) {
-} */
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  #footer {
-    height: var(--footer-height-md);
-    padding-top: 0px;
-  }
-  #footer-spacer {
-    height: var(--footer-height-md);
-  }
-  .nav-button {
-    font-size: 12px;
-    padding-top: 15px;
-  }
-  .nav-button-active {
-    padding-top: 8px;
-  }
-}
-/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
-/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
-/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
-/* ============ MAX WIDTH ========== DO NOT PASS THIS LINE */
-
-/* Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
-} */
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  #appContent {
-    max-width: 1140px;
-  }
-  #footer {
-    width: 1140px;
-  }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-/* @media (min-width: 1400px) {
-} */
-
 /* ===== Splash Screen ===== */
 .splash {
   position: fixed;
@@ -161,9 +148,11 @@ https://material.io/components/buttons
   opacity: 1;
   transition: opacity 0.5s ease-out;
 }
+
 .splash-gone {
   opacity: 0;
 }
+
 .splash__title {
   text-transform: uppercase;
   font-size: 40px;
@@ -187,24 +176,49 @@ https://material.io/components/buttons
     width: 180px;
   }
 }
+
 /* ===== Header ===== */
-header {
+.header {
   position: fixed;
-  left: 0;
-  right: 0;
-  padding: 6px;
+  height: var(--header-height-xs);
+  width: 100%;
   background: var(--color-army-green);
   color: var(--color-crate-yellow);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.rank {
-  text-align: right;
-  flex-grow: 1;
+.header-spacer {
+  height: var(--header-height-xs);
 }
 
 select {
   outline: 0;
   padding: 3px 4px 3px 8px;
   border-radius: 40px;
+}
+
+.rank-container {
+  height: 100%;
+}
+
+.rank {
+  height: calc(var(--header-height-xs) * 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: var(--footer-height-md);
+  }
+  .header-spacer {
+    height: var(--footer-height-md);
+  }
+  .rank {
+    height: calc(var(--footer-height-md) * 0.6);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    width: 1140px;
+  }
 }
