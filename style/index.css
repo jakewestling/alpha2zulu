@@ -34,8 +34,8 @@ body {
   --color-army-green: rgb(68, 95, 68);
   --color-crate-yellow: rgb(224, 195, 31);
   --header-height-xs: 41px;
-  --footer-height-md: 48px;
   --footer-height-xs: 36px;
+  --footer-height-md: 48px;
   --grayed-out: #aaafb4;
   --shadow: rgba(0, 0, 0, 0.1);
 }
@@ -87,7 +87,7 @@ h1 {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 0px) {
   #footer {
     height: var(--footer-height-md);
     padding-top: 0px;
