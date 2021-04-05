@@ -6,3 +6,5 @@
 // Import nav.js
 import * as nav from '../module/nav.js';
 import * as splash from '../module/splash.js';
+import * as audio from '../module/audio.js';
+

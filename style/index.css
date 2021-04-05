@@ -297,7 +297,7 @@ select {
   }
 }
 
-/* Path Chapter */
+/* Path */
 .title-container {
   display: flex;
   justify-content: center;
@@ -323,7 +323,6 @@ select {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  /* justify-content: center; */
   justify-items: center;
 }
 
@@ -363,4 +362,20 @@ select {
   left: 0;
   right: 0;
   background: hsla(120, 12%, 50%, 0.8);
+}
+
+/* Alphabet Table */
+.alphabet-table {
+  width: 100%;
+}
+
+.pronunciation-td {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.play-pause-btn {
+  cursor: pointer;
+  margin-left: 8px;
 }
