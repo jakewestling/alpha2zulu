@@ -1,6 +1,10 @@
 // Play and Pause Button
-// let audio = document.querySelector('#test-audio');
-let playPauseBtn = document.querySelector('.play-pause-btn');
+let playPauseBtns = document.querySelectorAll('.play-pause-btn');
+playPauseBtns.forEach(function (playPauseBtn) {
+  // Play and Pause on Click
+  playPauseBtn.addEventListener('click', toggleAudio);
+});
+
 
 let audioLibrary = {
   a: 'alfa.mp3',
@@ -45,17 +49,18 @@ let audioLibrary = {
 
 
 // Create audio element dynamically (on first click)
-let audio;
+// let audio;
 let symbolDOM;
 function createAudioElement() {
+  let audio;
   audio = document.createElement('audio');
-  // Choose correct audio file for button based on DOM
-  let correctFile;
-  // console.log(this);
-  symbolDOM = document.querySelector('.symbol');
+  // Choose correct audio file for button based on DOM  
+  // symbolDOM = self.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase();
+  console.log(symbolDOM);
+  let correctFile = audioLibrary[symbolDOM];
+  console.log(correctFile);
 
-
-  audio.src = `../audio/alpha.mp3`;
+  audio.src = `../audio/alfa.mp3`;
   // audio.src = `../audio/${correctFile}`;
   audio.type = 'audio/mpeg'
   isCreated = true;
@@ -63,12 +68,14 @@ function createAudioElement() {
   audio.addEventListener('ended', togglePlayIcon);
 }
 
-// Play and Pause on Click
-playPauseBtn.addEventListener('click', toggleAudio);
+
 
 let isCreated = false;
+let self;
 function toggleAudio() {
-  console.log(this.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase());
+  self = this;
+  // console.log(this);
+  // console.log(this.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase());
   if (!isCreated) {
     createAudioElement();
   }
@@ -83,12 +90,12 @@ function toggleAudio() {
 // Swap between speaker and pause icons
 function togglePlayIcon() {
   // Remove speaker icon classes
-  playPauseBtn.classList.toggle('fas');
-  playPauseBtn.classList.toggle('fa-volume-up');
+  self.classList.toggle('fas');
+  self.classList.toggle('fa-volume-up');
   // Add pause icon classes
-  playPauseBtn.classList.toggle('far');
-  playPauseBtn.classList.toggle('fa-lg');
-  playPauseBtn.classList.toggle('fa-pause-circle');
+  self.classList.toggle('far');
+  self.classList.toggle('fa-lg');
+  self.classList.toggle('fa-pause-circle');
 }
 
 
