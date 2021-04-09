@@ -257,7 +257,7 @@ function createAudioElement(codeWordDOM, self) {
     console.log(generatedAudioDOM);
     alphabet[codeWordDOM].audioElementIsCreated = true;
     // Add event listener for icon at end
-    audio.addEventListener('ended', function(){
+    audio.addEventListener('ended', function () {
       togglePlayIcon(self);
     });
   } else {
