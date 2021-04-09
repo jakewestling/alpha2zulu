@@ -5,48 +5,230 @@ playPauseBtns.forEach(function (playPauseBtn) {
   playPauseBtn.addEventListener('click', toggleAudio);
 });
 
+// Alphabet Object - Use bracket notation alphabet['x-ray'] to reference because of x-ray
+let alphabet = {
+  alfa: {
+    symbol: 'a',
+    pronunciation: 'AL fah',
+    audioFile: 'alfa.mp3',
+    audioElementIsCreated: false
+  },
+  bravo: {
+    symbol: 'b',
+    pronunciation: 'BRAH voh',
+    audioFile: 'bravo.mp3',
+    audioElementIsCreated: false
+  },
+  charlie: {
+    symbol: 'c',
+    pronunciation: 'CHAR lee',
+    audioFile: 'charlie.mp3',
+    audioElementIsCreated: false
+  },
+  delta: {
+    symbol: 'd',
+    pronunciation: 'DEL tah',
+    audioFile: 'delta.mp3',
+    audioElementIsCreated: false
+  },
+  echo: {
+    symbol: 'e',
+    pronunciation: 'EKK oh',
+    audioFile: 'echo.mp3',
+    audioElementIsCreated: false
+  },
+  foxtrot: {
+    symbol: 'f',
+    pronunciation: 'FOKS trot',
+    audioFile: 'foxtrot.mp3',
+    audioElementIsCreated: false
+  },
+  golf: {
+    symbol: 'g',
+    pronunciation: 'Golf',
+    audioFile: 'golf.mp3',
+    audioElementIsCreated: false
+  },
+  hotel: {
+    symbol: 'h',
+    pronunciation: 'HO tell',
+    audioFile: 'hotel.mp3',
+    audioElementIsCreated: false
+  },
+  india: {
+    symbol: 'i',
+    pronunciation: 'IN dee ah',
+    audioFile: 'india.mp3',
+    audioElementIsCreated: false
+  },
+  juliett: {
+    symbol: 'j',
+    pronunciation: 'JEW lee ett',
+    audioFile: 'juliett.mp3',
+    audioElementIsCreated: false
+  },
+  kilo: {
+    symbol: 'k',
+    pronunciation: 'KEY loh',
+    audioFile: 'kilo.mp3',
+    audioElementIsCreated: false
+  },
+  lima: {
+    symbol: 'l',
+    pronunciation: 'LEE mah',
+    audioFile: 'lima.mp3',
+    audioElementIsCreated: false
+  },
+  mike: {
+    symbol: 'm',
+    pronunciation: 'Mike',
+    audioFile: 'mike.mp3',
+    audioElementIsCreated: false
+  },
+  november: {
+    symbol: 'n',
+    pronunciation: 'NOH vem ber',
+    audioFile: 'november.mp3',
+    audioElementIsCreated: false
+  },
+  oscar: {
+    symbol: 'o',
+    pronunciation: 'OSS car',
+    audioFile: 'oscar.mp3',
+    audioElementIsCreated: false
+  },
+  papa: {
+    symbol: 'p',
+    pronunciation: 'PAH pah',
+    audioFile: 'papa.mp3',
+    audioElementIsCreated: false
+  },
+  quebec: {
+    symbol: 'q',
+    pronunciation: 'keh BECK',
+    audioFile: 'quebec.mp3',
+    audioElementIsCreated: false
+  },
+  romeo: {
+    symbol: 'r',
+    pronunciation: 'ROW me oh',
+    audioFile: 'romeo.mp3',
+    audioElementIsCreated: false
+  },
+  sierra: {
+    symbol: 's',
+    pronunciation: 'see AIR ah',
+    audioFile: 'sierra.mp3',
+    audioElementIsCreated: false
+  },
+  tango: {
+    symbol: 't',
+    pronunciation: 'TANG go',
+    audioFile: 'tango.mp3',
+    audioElementIsCreated: false
+  },
+  uniform: {
+    symbol: 'u',
+    pronunciation: 'YOU nee form',
+    audioFile: 'uniform.mp3',
+    audioElementIsCreated: false
+  },
+  victor: {
+    symbol: 'v',
+    pronunciation: 'VIK ter',
+    audioFile: 'victor.mp3',
+    audioElementIsCreated: false
+  },
+  whiskey: {
+    symbol: 'w',
+    pronunciation: 'WISS key',
+    audioFile: 'whiskey.mp3',
+    audioElementIsCreated: false
+  },
+  'x-ray': {
+    symbol: 'x',
+    pronunciation: 'EKS ray',
+    audioFile: 'x-ray.mp3',
+    audioElementIsCreated: false
+  },
+  yankee: {
+    symbol: 'y',
+    pronunciation: 'YANG kee',
+    audioFile: 'yankee.mp3',
+    audioElementIsCreated: false
+  },
+  zulu: {
+    symbol: 'z',
+    pronunciation: 'ZOO luu',
+    audioFile: 'zulu.mp3',
+    audioElementIsCreated: false
+  },
+  zero: {
+    symbol: '0',
+    pronunciation: 'ZE-RO',
+    audioFile: 'zero.mp3',
+    audioElementIsCreated: false
+  },
+  one: {
+    symbol: '1',
+    pronunciation: 'WUN',
+    audioFile: 'one.mp3',
+    audioElementIsCreated: false
+  },
+  two: {
+    symbol: '2',
+    pronunciation: 'TOO',
+    audioFile: 'two.mp3',
+    audioElementIsCreated: false
+  },
+  three: {
+    symbol: '3',
+    pronunciation: 'TREE',
+    audioFile: 'three.mp3',
+    audioElementIsCreated: false
+  },
+  four: {
+    symbol: '4',
+    pronunciation: 'FOW-ER',
+    audioFile: 'four.mp3',
+    audioElementIsCreated: false
+  },
+  five: {
+    symbol: '5',
+    pronunciation: 'FIFE',
+    audioFile: 'five.mp3',
+    audioElementIsCreated: false
+  },
+  six: {
+    symbol: '6',
+    pronunciation: 'SIX',
+    audioFile: 'six.mp3',
+    audioElementIsCreated: false
+  },
+  seven: {
+    symbol: '7',
+    pronunciation: 'SEV-EN',
+    audioFile: 'seven.mp3',
+    audioElementIsCreated: false
+  },
+  eight: {
+    symbol: '8',
+    pronunciation: 'AIT',
+    audioFile: 'eight.mp3',
+    audioElementIsCreated: false
+  },
+  nine: {
+    symbol: '9',
+    pronunciation: 'NIN-ER',
+    audioFile: 'nine.mp3',
+    audioElementIsCreated: false
+  }
+};
 
-let audioLibrary = {
-  a: 'alfa.mp3',
-  b: 'bravo.mp3',
-  c: 'charlie.mp3',
-  d: 'delta.mp3',
-  e: 'echo.mp3',
-  f: 'foxtrot.mp3',
-  g: 'golf.mp3',
-  h: 'hotel.mp3',
-  i: 'india.mp3',
-  j: 'juliett.mp3',
-  k: 'kilo.mp3',
-  l: 'lima.mp3',
-  m: 'mike.mp3',
-  n: 'november.mp3',
-  o: 'oscar.mp3',
-  p: 'papa.mp3',
-  q: 'quebec.mp3',
-  r: 'romeo.mp3',
-  s: 'sierra.mp3',
-  t: 'tango.mp3',
-  u: 'uniform.mp3',
-  v: 'victor.mp3',
-  w: 'whiskey.mp3',
-  x: 'xray.mp3',
-  y: 'yankee.mp3',
-  z: 'zulu.mp3',
-  number0: 'zero.mp3',
-  number1: 'one.mp3',
-  number2: 'two.mp3',
-  number3: 'three.mp3',
-  number4: 'four.mp3',
-  number5: 'five.mp3',
-  number6: 'six.mp3',
-  number7: 'seven.mp3',
-  number8: 'eight.mp3',
-  number9: 'nine.mp3'
-}
-
-
-
+console.log(alphabet);
+console.log(alphabet['nine'].audioElementIsCreated);
+alphabet['nine'].audioElementIsCreated = true;
+console.log(alphabet['nine'].audioElementIsCreated);
 
 // Create audio element dynamically (on first click)
 // let audio;
@@ -63,20 +245,20 @@ function createAudioElement() {
   audio.src = `../audio/alfa.mp3`;
   // audio.src = `../audio/${correctFile}`;
   audio.type = 'audio/mpeg'
-  isCreated = true;
+  oldIsCreated = true;
   // Reset Icon at end of track
   audio.addEventListener('ended', togglePlayIcon);
 }
 
 
 
-let isCreated = false;
+let oldIsCreated = false;
 let self;
 function toggleAudio() {
   self = this;
   // console.log(this);
   // console.log(this.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase());
-  if (!isCreated) {
+  if (!oldIsCreated) {
     createAudioElement();
   }
   if (audio.paused) {
