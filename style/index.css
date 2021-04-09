@@ -379,3 +379,7 @@ select {
   cursor: pointer;
   margin-left: 8px;
 }
+
+.generated-audio {
+  display: none;
+}

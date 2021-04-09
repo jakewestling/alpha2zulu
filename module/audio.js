@@ -225,52 +225,49 @@ let alphabet = {
   }
 };
 
-console.log(alphabet);
-console.log(alphabet['nine'].audioElementIsCreated);
-alphabet['nine'].audioElementIsCreated = true;
-console.log(alphabet['nine'].audioElementIsCreated);
-
-// Create audio element dynamically (on first click)
-// let audio;
-let symbolDOM;
-function createAudioElement() {
-  let audio;
-  audio = document.createElement('audio');
-  // Choose correct audio file for button based on DOM  
-  // symbolDOM = self.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase();
-  console.log(symbolDOM);
-  let correctFile = audioLibrary[symbolDOM];
-  console.log(correctFile);
-
-  audio.src = `../audio/alfa.mp3`;
-  // audio.src = `../audio/${correctFile}`;
-  audio.type = 'audio/mpeg'
-  oldIsCreated = true;
-  // Reset Icon at end of track
-  audio.addEventListener('ended', togglePlayIcon);
-}
-
-
-
-let oldIsCreated = false;
-let self;
 function toggleAudio() {
-  self = this;
-  // console.log(this);
-  // console.log(this.parentElement.parentElement.querySelector('.symbol').innerText.toLowerCase());
-  if (!oldIsCreated) {
-    createAudioElement();
-  }
+  // Get code word from DOM based on click location
+  let codeWordDOM = this.parentElement.parentElement.querySelector('.code-word').innerText.toLowerCase();
+  // Create audio element if it doesn't exist, return that audio element
+  let audio = createAudioElement(codeWordDOM, this);
+
+
   if (audio.paused) {
     audio.play();
   } else {
     audio.pause();
   }
-  togglePlayIcon();
+  togglePlayIcon(this);
+}
+
+// TODO: check for particular object, rewrite
+// Create new audio element, add event ended event listener
+let generatedAudioDOM = document.getElementsByClassName('generated-audio')[0];
+
+function createAudioElement(codeWordDOM, self) {
+  let audio;
+  let audioSource = `../audio/${alphabet[codeWordDOM].audioFile}`;
+  if (!alphabet[codeWordDOM].audioElementIsCreated) {
+    console.log(`createAudioElement: ${codeWordDOM}`);
+    audio = document.createElement('audio');
+    audio.src = audioSource;
+    audio.setAttribute('type', 'audio/mpeg');
+    audio.className = codeWordDOM;
+    generatedAudioDOM.appendChild(audio);
+    console.log(generatedAudioDOM);
+    alphabet[codeWordDOM].audioElementIsCreated = true;
+    // Add event listener for icon at end
+    audio.addEventListener('ended', function(){
+      togglePlayIcon(self);
+    });
+  } else {
+    audio = document.querySelector(`.${codeWordDOM}`);
+  }
+  return audio;
 }
 
 // Swap between speaker and pause icons
-function togglePlayIcon() {
+function togglePlayIcon(self) {
   // Remove speaker icon classes
   self.classList.toggle('fas');
   self.classList.toggle('fa-volume-up');
