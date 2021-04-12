@@ -1,3 +1,5 @@
+// TODO: Record Audio for each letter and number
+
 // Play and Pause Button
 let playPauseBtns = document.querySelectorAll('.play-pause-btn');
 playPauseBtns.forEach(function (playPauseBtn) {

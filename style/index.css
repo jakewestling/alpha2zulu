@@ -154,14 +154,14 @@ https://material.io/components/buttons
   }
 }
 
-/* ===== Splash Screen ===== */
+/* Splash Screen */
 .splash {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 999999;
   background: #eee;
   display: flex;
   flex-direction: column;
