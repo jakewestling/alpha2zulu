@@ -243,6 +243,7 @@ function toggleAudio() {
 // Create new audio element, add event ended event listener
 let generatedAudioDOM = document.getElementsByClassName('generated-audio')[0];
 
+// Audio Source URL is relative from the HTML, since that is where we are adding it.
 function createAudioElement(codeWordDOM, self) {
   let audio;
   let audioSource = `./audio/${alphabet[codeWordDOM].audioFile}`;
