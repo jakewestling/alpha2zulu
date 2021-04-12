@@ -366,7 +366,6 @@ select {
 }
 
 /* Alphabet Table */
-/* TODO: Make table header stay at top when scrolling down - fixed or sticky? */
 .alphabet-table {
   width: 100%;
 }
@@ -375,24 +374,9 @@ select {
 .alphabet-table tbody tr td:first-of-type {
   padding-left: 12px;
 }
-tr {
-  /* border: 1px solid var(--color-crate-yellow); */
-}
-
-thead {
-  color: #222;
-  letter-spacing: -0.3px;
-  background-color: var(--color-crate-yellow-lighter);
-  background-color: hsl(52, 39%, 85%);
-  border-bottom: 1px solid var(--color-army-green);
-}
 
 tbody tr:nth-of-type(odd) {
   background-color: hsl(127, 12%, 81%);
-}
-
-thead th {
-  height: 55px;
 }
 
 th,
@@ -414,4 +398,29 @@ td {
 
 .generated-audio {
   display: none;
+}
+
+/* Sticky Table Header */
+.sticky th {
+  box-sizing: content-box;
+  position: sticky;
+  top: var(--header-height-xs);
+  color: #222;
+  letter-spacing: -0.3px;
+  background-color: hsl(52, 39%, 85%);
+}
+.sticky th::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--color-army-green);
+}
+@media screen and (min-width: 768px) {
+  .sticky th {
+    position: sticky;
+    top: var(--footer-height);
+  }
 }
