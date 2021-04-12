@@ -240,13 +240,12 @@ function toggleAudio() {
   togglePlayIcon(this);
 }
 
-// TODO: check for particular object, rewrite
 // Create new audio element, add event ended event listener
 let generatedAudioDOM = document.getElementsByClassName('generated-audio')[0];
 
 function createAudioElement(codeWordDOM, self) {
   let audio;
-  let audioSource = `../audio/${alphabet[codeWordDOM].audioFile}`;
+  let audioSource = `./audio/${alphabet[codeWordDOM].audioFile}`;
   if (!alphabet[codeWordDOM].audioElementIsCreated) {
     console.log(`createAudioElement: ${codeWordDOM}`);
     audio = document.createElement('audio');
