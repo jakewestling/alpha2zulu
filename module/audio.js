@@ -248,13 +248,13 @@ function createAudioElement(codeWordDOM, self) {
   let audio;
   let audioSource = `./audio/${alphabet[codeWordDOM].audioFile}`;
   if (!alphabet[codeWordDOM].audioElementIsCreated) {
-    console.log(`createAudioElement: ${codeWordDOM}`);
+    // console.log(`createAudioElement: ${codeWordDOM}`);
     audio = document.createElement('audio');
     audio.src = audioSource;
-    audio.setAttribute('type', 'audio/mpeg');
+    // audio.setAttribute('type', 'audio/mpeg');
     audio.className = codeWordDOM;
     generatedAudioDOM.appendChild(audio);
-    console.log(generatedAudioDOM);
+    // console.log(generatedAudioDOM);
     alphabet[codeWordDOM].audioElementIsCreated = true;
     // Add event listener for icon at end
     audio.addEventListener('ended', function () {

@@ -216,14 +216,6 @@ https://material.io/components/buttons
   height: var(--header-height-xs);
 }
 
-.page-title {
-  padding: 0 4px;
-  letter-spacing: -0.3px;
-  font-size: var(--h2-size);
-  color: #aaafb4;
-  color: var(--color-army-green-lighter);
-}
-
 select {
   outline: 0;
   padding: 3px 4px 3px 8px;
@@ -375,6 +367,13 @@ select {
 }
 
 /* Alphabet Table */
+.title-table {
+  padding: 0 4px;
+  letter-spacing: -0.3px;
+  font-size: var(--h2-size);
+  color: var(--color-army-green-lighter);
+}
+
 .alphabet-table {
   width: 100%;
 }
