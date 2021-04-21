@@ -44,6 +44,8 @@ TODO: Dynamically generate disabled overlay with JS
   --grayed-out: #aaafb4;
   --shadow: rgba(0, 0, 0, 0.1);
   --h2-size: 23.69px;
+  --h3-size: 17.77px;
+  --h4-size: 13.33px;
 }
 
 /* Typography */
@@ -59,10 +61,10 @@ h2 {
   font-size: var(--h2-size);
 }
 h3 {
-  font-size: 17.77px;
+  font-size: var(--h3-size);
 }
 h4 {
-  font-size: 13.33px;
+  font-size: var(--h4-size);
 }
 h5 {
   font-size: 10px;
@@ -367,6 +369,13 @@ select {
 }
 
 /* Alphabet Table */
+.header-title {
+  padding: 0 4px;
+  letter-spacing: -0.3px;
+  font-size: var(--h2-size);
+  color: var(--color-army-green-lighter);
+}
+
 .title-table {
   padding: 0 4px;
   letter-spacing: -0.3px;
@@ -431,4 +440,24 @@ td {
     position: sticky;
     top: var(--footer-height);
   }
+}
+
+/* Profile Rank Page */
+/* TODO: Clamp lines to 3 more gracefully */
+.user-profile {
+  display: flex;
+  padding: 12px 10px;
+  height: 110px;
+  overflow: hidden;
+}
+
+.user-image {
+  width: 95px;
+  margin-right: 16px;
+  border-radius: 500px;
+}
+
+.user-name {
+  font-size: var(--h3-size);
+  font-weight: bold;
 }
