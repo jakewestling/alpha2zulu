@@ -43,6 +43,7 @@ TODO: Dynamically generate disabled overlay with JS
   --footer-height: 48px;
   --grayed-out: #aaafb4;
   --shadow: rgba(0, 0, 0, 0.1);
+  --h2-size: 23.69px;
 }
 
 /* Typography */
@@ -55,7 +56,7 @@ h1 {
   font-size: 31.57px;
 }
 h2 {
-  font-size: 23.69px;
+  font-size: var(--h2-size);
 }
 h3 {
   font-size: 17.77px;
@@ -213,6 +214,14 @@ https://material.io/components/buttons
 }
 .header-spacer {
   height: var(--header-height-xs);
+}
+
+.page-title {
+  padding: 0 4px;
+  letter-spacing: -0.3px;
+  font-size: var(--h2-size);
+  color: #aaafb4;
+  color: var(--color-army-green-lighter);
 }
 
 select {
